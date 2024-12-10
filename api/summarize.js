@@ -1,4 +1,34 @@
-const summarizeText = require("../summarize");
+const axios = require("axios");
+require("dotenv").config();
+
+async function summarizeText(text) {
+  const API_TOKEN = process.env.ACCESS_TOKEN;
+  const API_URL =
+    "https://api-inference.huggingface.co/models/facebook/bart-large-cnn";
+
+  try {
+    const response = await axios({
+      url: API_URL,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      data: {
+        inputs: text,
+        parameters: {
+          max_length: 130,
+          min_length: 30,
+        },
+      },
+    });
+
+    return response.data[0].summary_text;
+  } catch (error) {
+    console.error("Error in summarizeText:", error);
+    throw error;
+  }
+}
 
 module.exports = async (req, res) => {
   // Enable CORS
