@@ -62,7 +62,7 @@ function submitData(e) {
     redirect: "follow",
   };
 
-  fetch("/summarize", requestOptions)
+  fetch("/api/summarize", requestOptions)
     .then((response) => response.text())
     .then((summary) => {
       summarizedTextArea.value = summary;
