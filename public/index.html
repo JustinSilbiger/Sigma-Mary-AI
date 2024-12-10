@@ -10,75 +10,77 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   </head>
-
-
   
   <body>
-    
-    <h1> Sigma-Mary AI</h1>
-    
-    <p>📚 Summarize text using Sigma-Mary AI! 🌟 </p>
-
-    <p>📖 Go ahead, give it a whirl! 📝</p>
-
-
-
-    <div class="container">
-      
-        <div class="text-box lefty">
-          <p>Input</p>
-          <textarea id="text_to_summarize" name="text_to_summarize" placeholder="Paste your text here (must be 200 characters or more)." maxlength="100000" autofocus></textarea>
-          
-        </div>
-      
-        <div class="text-box righty"> 
-          <p>Output</p>
-          <textarea id="summary" name="summarized_text" placeholder="Working..."> </textarea>
-        
-        </div>
-      
+    <div class="particles">
+      <!-- Particles will be added via JavaScript -->
     </div>
+    <main>
+      <h1>SnapSummary AI</h1>
       
-    <button id="submit-button" class="submit-button" >
+      <div class="intro">
+        <p>🚀 Instantly transform long texts into clear, concise summaries!</p>
+        <p>⚡️ Perfect for articles, documents, and research papers</p>
+      </div>
 
-      <span class="submit-button-text">Summarize</span>
-
-    </button>
-    
-    
-    
-    
-    
-
-    
-    <section class="cta-section">
-      <div class="cta-content">
-        <div class="cta-text">
-        <h2>👀 <a href="https://justinsilbiger.github.io/" target="_blank" rel="noopener nofollow"> Check out the rest of my portfolio!</a> 💼</h2>
-          
-
-
-
-
-
-          
-          
-
-          
+      <div class="container">
+        <div class="text-box lefty">
+          <p>Your Text</p>
+          <textarea 
+            id="text_to_summarize" 
+            name="text_to_summarize" 
+            placeholder="Paste any text (200+ characters) to get a quick summary. Great for research papers, articles, or long documents..."
+            maxlength="100000" 
+            autofocus
+          ></textarea>
         </div>
       </div>
-      <p  class='submit-space'>👨🏻‍💻 <a href='https://huggingface.co/facebook/bart-large-cnn' target='_blank''> This app is powered by artificial intelligence</a> 🤖</p>
 
-      <p>  <a href='https://academy.postman.com/page/students' target='_blank'>Postman </a> 📢
+      <div id="summary-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Quick Summary</h2>
+            <div class="modal-actions">
+              <button id="copy-text" class="action-button" title="Copy to clipboard">
+                <span>📋</span>
+              </button>
+              <button id="close-modal" class="action-button" title="Close">
+                <span>❌</span>
+              </button>
+            </div>
+          </div>
+          <textarea 
+            id="summary" 
+            name="summarized_text" 
+            placeholder="Your AI-powered summary will appear here in seconds..." 
+            readonly
+          ></textarea>
+        </div>
+      </div>
+
+      <button id="submit-button" class="submit-button">
+        <span class="submit-button-text">Summarize Now</span>
+      </button>
+
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>👀 Save time with AI-powered summarization</h2>
+        </div>
         
-        
-        
-        <a href='https://ai.meta.com/research/' target='_blank'>AI @ Meta</a> 
-        
-        📢
-      </p>
-      
-    </section>
+        <p class="submit-space">
+          ⚡️ <a href="https://huggingface.co/facebook/bart-large-cnn" target="_blank">Powered by advanced AI technology</a> for rapid summarization
+        </p>
+
+        <p>
+          Built with <a href="https://academy.postman.com/page/students" target="_blank">Postman</a> 🔧
+          and <a href="https://ai.meta.com/research/" target="_blank">Meta AI</a> 🧠
+        </p>
+
+        <p>
+          Created by <a href="https://justinsilbiger.com" target="_blank" rel="noopener noreferrer">Justin Silbiger</a> 👨‍💻
+        </p>
+      </section>
+    </main>
     
     <script src="script.js"></script>
   </body>
